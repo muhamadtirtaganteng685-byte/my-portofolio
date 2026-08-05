@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamad Tirta Heryanto | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#030a05',      /* Hitam pekat */
+                            card: '#0a1a0f',      /* Hijau-hitam untuk kartu */
+                            primary: '#0d2818',   /* Hijau tua utama */
+                            accent: '#16db65',    /* Hijau neon aksen */
+                            glow: '#00ff66',      /* Efek glowing */
+                            muted: '#a3b18a'      /* Teks sekunder */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans antialiased relative">
+
+    <!-- Canvas Background Interaktif -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/5 py-4 px-6 md:px-12 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold tracking-wider text-brand-accent flex items-center gap-2">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+                TIRTA<span class="text-white">.DEV</span>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-gray-300">
+                <a href="#about" class="hover:text-brand-accent transition-colors">Tentang</a>
+                <a href="#fields" class="hover:text-brand-accent transition-colors">Keahlian</a>
+                <a href="#projects" class="hover:text-brand-accent transition-colors">Proyek</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">Kontak</a>
+            </div>
+
+            <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-brand-primary border border-brand-accent/40 text-brand-accent hover:bg-brand-accent hover:text-brand-dark px-4 py-2 rounded-full font-semibold transition-all duration-300 text-sm">
+                <span>Hubungi Saya</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative z-10 min-h-screen flex items-center justify-center pt-24 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-accent text-xs font-semibold mb-6 border border-brand-accent/30">
+                <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+                Siswa SMKN 2 Tasikmalaya
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Halo, Saya <br/>
+                <span class="bg-gradient-to-r from-white to-brand-accent bg-clip-text text-transparent">Muhamad Tirta Heryanto</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+                Seorang murid dari <strong class="text-white">SMKN 2 TSM</strong> yang berfokus pada pengembangan <span class="text-brand-accent">Web Dev</span>, eksplorasi <span class="text-brand-accent">AI</span>, <span class="text-brand-accent">Design</span>, dan infrastruktur <span class="text-brand-accent">IT</span>.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="bg-brand-accent text-brand-dark font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-brand-accent/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                    Lihat Portofolio
+                </a>
+                <a href="#contact" class="glass-card text-white hover:text-brand-accent font-bold px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Kontak Saya
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative z-10 py-24 px-6 max-w-6xl mx-auto">
+        <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden" data-aos="fade-up">
+            <div class="absolute -top-24 -right-24 w-60 h-60 bg-brand-accent/10 rounded-full blur-3xl"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-sm font-bold text-brand-accent tracking-widest uppercase mb-2">Tentang Saya</h2>
+                    <h3 class="text-3xl font-extrabold text-white mb-6">Membangun Solusi Digital dari SMKN 2 Tasikmalaya</h3>
+                    <p class="text-brand-muted leading-relaxed mb-4">
+                        Halo! Saya <strong class="text-white">Muhamad Tirta Heryanto</strong>, seorang pelajar yang antusias dalam dunia teknologi. Bersekolah di SMKN 2 Tasikmalaya memberi saya landasan kuat untuk terus mengeksplorasi dunia pemrograman dan IT.
+                    </p>
+                    <p class="text-brand-muted leading-relaxed">
+                        Saya menyukai tantangan baru, mulai dari membuat tampilan web yang interaktif, memanfaatkan kecerdasan buatan (AI), merancang desain visual yang estetik, hingga memahami dasar-dasar sistem informasi & IT.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-5 glass-card rounded-2xl text-center">
+                        <div class="text-brand-accent text-3xl font-extrabold mb-1">SMKN 2</div>
+                        <div class="text-xs text-brand-muted">Tasikmalaya</div>
+                    </div>
+                    <div class="p-5 glass-card rounded-2xl text-center">
+                        <div class="text-brand-accent text-3xl font-extrabold mb-1">4+</div>
+                        <div class="text-xs text-brand-muted">Fokus Keahlian</div>
+                    </div>
+                    <div class="p-5 glass-card rounded-2xl text-center">
+                        <div class="text-brand-accent text-3xl font-extrabold mb-1">100%</div>
+                        <div class="text-xs text-brand-muted">Semangat Belajar</div>
+                    </div>
+                    <div class="p-5 glass-card rounded-2xl text-center">
+                        <div class="text-brand-accent text-3xl font-extrabold mb-1">Modern</div>
+                        <div class="text-xs text-brand-muted">Tech Stack</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fields / Skills Section -->
+    <section id="fields" class="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-sm font-bold text-brand-accent tracking-widest uppercase mb-2">Bidang Keahlian</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Apa Yang Saya Kerjakan</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Web Dev -->
+            <div class="glass-card p-8 rounded-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-brand-primary border border-brand-accent/30 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-all duration-300">
+                    <i data-lucide="code" class="w-7 h-7"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">Web Dev</h4>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Mengembangkan situs web responsif, interaktif, dan modern menggunakan HTML, CSS, JavaScript, serta framework terkini.
+                </p>
+            </div>
+
+            <!-- AI -->
+            <div class="glass-card p-8 rounded-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-brand-primary border border-brand-accent/30 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-all duration-300">
+                    <i data-lucide="bot" class="w-7 h-7"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">AI (Artificial Intelligence)</h4>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Eksplorasi integrasi AI, prompt engineering, dan pemanfaatan alur kerja berbasis kecerdasan buatan untuk efisiensi.
+                </p>
+            </div>
+
+            <!-- Design -->
+            <div class="glass-card p-8 rounded-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-brand-primary border border-brand-accent/30 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-all duration-300">
+                    <i data-lucide="palette" class="w-7 h-7"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">Design</h4>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Merancang antarmuka UI/UX yang bersih, menarik, serta membuat aset visual yang nyaman dipandang mata.
+                </p>
+            </div>
+
+            <!-- IT -->
+            <div class="glass-card p-8 rounded-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-brand-primary border border-brand-accent/30 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-all duration-300">
+                    <i data-lucide="cpu" class="w-7 h-7"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">IT Infrastructure</h4>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Pemahaman dasar jaringan komputer, perangkat keras (hardware), trouble shooting, dan pemeliharaan sistem IT.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-sm font-bold text-brand-accent tracking-widest uppercase mb-2">Portofolio</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Proyek & Karya Terbaru</h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-gradient-to-br from-brand-primary to-black relative flex items-center justify-center border-b border-white/5">
+                    <i data-lucide="layout" class="w-16 h-16 text-brand-accent/40 group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold uppercase tracking-wider">Web Development</span>
+                    <h4 class="text-xl font-bold text-white mt-1 mb-2">Interactive Website</h4>
+                    <p class="text-brand-muted text-sm mb-4">Website interaktif dengan tema warna gelap dan animasi modern.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-sm text-brand-accent hover:underline">
+                        <span>Lihat Detail</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-48 bg-gradient-to-br from-brand-primary to-black relative flex items-center justify-center border-b border-white/5">
+                    <i data-lucide="sparkles" class="w-16 h-16 text-brand-accent/40 group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold uppercase tracking-wider">AI Integration</span>
+                    <h4 class="text-xl font-bold text-white mt-1 mb-2">Smart Assist App</h4>
+                    <p class="text-brand-muted text-sm mb-4">Eksperimen pemanfaatan API AI untuk solusi otomatisasi tugas harian.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-sm text-brand-accent hover:underline">
+                        <span>Lihat Detail</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-48 bg-gradient-to-br from-brand-primary to-black relative flex items-center justify-center border-b border-white/5">
+                    <i data-lucide="figma" class="w-16 h-16 text-brand-accent/40 group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold uppercase tracking-wider">UI/UX Design</span>
+                    <h4 class="text-xl font-bold text-white mt-1 mb-2">Dashboard Concept</h4>
+                    <p class="text-brand-muted text-sm mb-4">Desain antarmuka pengguna berskala modern dengan skema warna gelap.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-sm text-brand-accent hover:underline">
+                        <span>Lihat Detail</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative z-10 py-24 px-6 max-w-4xl mx-auto">
+        <div class="glass-card p-8 md:p-12 rounded-3xl" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <h2 class="text-sm font-bold text-brand-accent tracking-widest uppercase mb-2">Kontak</h2>
+                <h3 class="text-3xl font-extrabold text-white">Mari Bekerja Sama</h3>
+                <p class="text-brand-muted text-sm mt-2">Punya ide proyek atau ingin berdiskusi? Kirim pesan di bawah ini.</p>
+            </div>
+
+            <form id="contact-form" action="https://formspree.io/f/gantengtirta34@gmail.com" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">Nama</label>
+                        <input type="text" name="name" placeholder="Nama Anda" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">Email</label>
+                        <input type="email" name="email" placeholder="email@contoh.com" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">Pesan</label>
+                    <textarea name="message" rows="4" placeholder="Tuliskan pesan Anda di sini..." required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-accent text-brand-dark font-bold py-4 rounded-xl shadow-lg hover:shadow-brand-accent/20 hover:bg-emerald-400 transition-all duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 py-8 px-6 text-center text-xs text-brand-muted">
+        <p>© 2026 Muhamad Tirta Heryanto - SMKN 2 Tasikmalaya. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
